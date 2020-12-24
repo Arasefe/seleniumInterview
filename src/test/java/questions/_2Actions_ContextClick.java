@@ -24,7 +24,7 @@ public class _2Actions_ContextClick {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        // Go to https://the-internet.herokuapp.com/context_menu
+        // Go to website
         driver.get("https://the-internet.herokuapp.com/context_menu");
         // Right click to the box.
         WebElement box=driver.findElement(By.xpath("//div[@id='hot-spot']"));

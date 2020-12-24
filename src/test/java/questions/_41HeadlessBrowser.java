@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.io.File;
 import java.io.IOException;
 
-public class _26HeadlessChrome {
+public class _41HeadlessBrowser {
     public static void main(String[] args) throws IOException {
 
         WebDriverManager.chromedriver().setup();

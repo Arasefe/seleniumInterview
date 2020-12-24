@@ -21,9 +21,25 @@ public class _1Actions_Hover {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://the-internet.herokuapp.com/context_menu");
+        Actions actions=new Actions(driver);
+        WebElement picOne=driver.findElement(By.xpath("//div[@id='hot-spot']"));
+        actions.moveToElement(picOne).perform();
+
+    }
+    @Test
+    public void hoverOver2(){
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("http://practice.cybertekschool.com/hovers");
 
         Actions actions=new Actions(driver);
-        //actions.moveToElement()
+        WebElement element=driver.findElement(By.xpath("//img[@src='/img/avatar-blank.jpg'][1]"));
+        actions.moveToElement(element).perform();
+        String expected="name: user1";
+        String actual=driver.findElement(By.xpath("//h5[.='name: user1']")).getText();
+        Assert.assertEquals(actual,expected);
+
     }
 
 }
