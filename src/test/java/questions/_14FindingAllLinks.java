@@ -16,7 +16,7 @@ public class _14FindingAllLinks {
 
         driver.get("http://www.qaclickacademy.com/practice.php");
         System.out.println(driver.findElements(By.tagName("a")).size());
-        driver.close();
+        //driver.close();
 
 
     }

@@ -16,7 +16,7 @@ public class _18EnterTextWithoutSendKeys {
         // 1. To initialize js object
         JavascriptExecutor JS = (JavascriptExecutor) driver;
         // 2. Use executeScript() method to enter username
-        JS.executeScript("document.getElementById('twotabsearchtextbox').value='macbook pro'");
+        JS.executeScript("document.getElementById('twotabsearchtextbox').value='Best toy'");
 
     }
     @Test

@@ -18,10 +18,9 @@ public class _12TakeScreenShot {
     @Test
     public void tearDown() {
         WebDriverManager.chromedriver().setup();
-
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com");
-        //byte[] data = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+        //byte[] scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         try{
             FileUtils.copyFile(scrFile,new File("D:\\savescreen.png"));

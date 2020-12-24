@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class _5ImplicitWaitPr {
@@ -24,6 +25,13 @@ public class _5ImplicitWaitPr {
         WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOf(element));
          */
+
+        WebElement el1=driver.findElement(By.xpath(""));
+        WebElement el2=driver.findElement(By.xpath(""));
+        WebElement el3=driver.findElement(By.xpath(""));
+        WebElement el4=driver.findElement(By.xpath(""));
+
+        List<WebElement> list=driver.findElements(By.xpath(""));
 
     }
 

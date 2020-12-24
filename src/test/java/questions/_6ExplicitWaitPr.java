@@ -17,9 +17,10 @@ public class _6ExplicitWaitPr {
         driver.manage().window().maximize();
 
         driver.get("https://www.amazon.com");
-//        WebElement element=driver.findElement(By.cssSelector(""));
-//        WebDriverWait wait = new WebDriverWait(driver, 15);
-//        wait.until(ExpectedConditions.visibilityOf(element));
+        WebElement element=driver.findElement(By.cssSelector(""));
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.visibilityOf(element));
+        wait.until(ExpectedConditions.invisibilityOfAllElements(element));
 
     }
 }

@@ -18,7 +18,7 @@ public class _4AlertHandlingPractice {
         driver.get("http://practice.cybertekschool.com/javascript_alerts");
         // For Information alert
         WebElement infoAlert=driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
-        infoAlert.click();                             // if click() does not work
+        infoAlert.click();
         Alert alert = driver.switchTo().alert();
         alert.accept();
         // For Confirmation alert
