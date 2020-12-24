@@ -19,7 +19,6 @@ public class _17HandlingMultipleWindows {
         driver.manage().window().maximize();
         driver.get("http://www.qaclickacademy.com/practice.php");
 
-
         WebElement footerDriver = driver.findElement(By.id("gf-BIG"));            // Limiting webDriver scope
         WebElement columnDriver = footerDriver.findElement(By.xpath("//div[@id='gf-BIG']/table/tbody/tr/td"));
 
@@ -42,22 +41,15 @@ public class _17HandlingMultipleWindows {
 
     public void handlingMultipleWindows2() throws IOException {
         WebDriverManager.chromedriver().setup();
-
-
         WebDriver driver = new ChromeDriver();
-
-        driver.get("https://rahulshettyacademy.com/angularpractice/");
-
+        //driver.get("https://rahulshettyacademy.com/angularpractice/");
         //Switching Window
-
         //driver.switchTo().newWindow(WindowType.WINDOW);
-
         Set<String> handles = driver.getWindowHandles();
         Iterator<String> it = handles.iterator();
         String parentWindowId = it.next();
         String childWindow = it.next();
         driver.switchTo().window(childWindow);
-
 
         driver.get("https://rahulshettyacademy.com/");
 

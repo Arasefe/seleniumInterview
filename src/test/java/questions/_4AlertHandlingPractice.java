@@ -12,6 +12,7 @@ public class _4AlertHandlingPractice {
     public void handlingAlert() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
+        driver.get("");
         Alert alert = driver.switchTo().alert();
         // For Information alert
         alert.accept();
