@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class _27HowtoOpenURLWithoutGetNavigate {
+public class _27OpenURLWithoutGetNavigate {
 
     @Test
     public void openWithoutGetNavigate() {
@@ -20,6 +20,7 @@ public class _27HowtoOpenURLWithoutGetNavigate {
         String url = "https://www.amazon.com";
         String script = "window.location= \'"+url+"\'";
         js.executeScript(script);
+
         System.out.println(driver.getCurrentUrl());
         //driver.quit();
     }

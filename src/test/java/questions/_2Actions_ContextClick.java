@@ -14,7 +14,6 @@ public class _2Actions_ContextClick {
     @Test
     public void contextClick1(){
         /*
-        TC #17: Context Click – HOMEWORK
         1. Go to https://the-internet.herokuapp.com/context_menu
         2. Right click to the box.
         3. Alert will open.

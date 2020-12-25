@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class _6ExplicitWaitPr {
+public class _6ExplicitWaitPractice {
     @Test
     public void explicitWait(){
         WebDriverManager.chromedriver().setup();

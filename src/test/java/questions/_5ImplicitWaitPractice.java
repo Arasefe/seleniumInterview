@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class _5ImplicitWaitPr {
+public class _5ImplicitWaitPractice {
     @Test
     public static void implicitWaitPractice() {
         WebDriverManager.chromedriver().setup();

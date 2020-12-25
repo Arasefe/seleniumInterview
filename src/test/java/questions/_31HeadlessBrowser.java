@@ -11,22 +11,18 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 
-public class _41HeadlessBrowser {
+public class _31HeadlessBrowser {
 
     @Test
-    public  void methodName() throws IOException {
+    public  void methodName(){
 
         WebDriverManager.chromedriver().setup();
-
-
-
         ChromeOptions option=new ChromeOptions();
-        //option.setHeadless(true);
-        // OR -
+        // option.setHeadless(true);
+        // options.addArguments("window-size=1400,800");
+        // options.addArguments("disable-gpu")
+        // options.addArguments("--headless", "--disable-gpu", "--window-size=1400,800","--ignore-certificate-errors");
         option.addArguments("--headless");
-        // You should set window size for better resolution and screen capture
-        //option.addArguments("window-size=1200x600");
-
         WebDriver driver = new ChromeDriver(option);
         // Set headless chrome
 

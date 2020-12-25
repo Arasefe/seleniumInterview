@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.function.Function;
 
-public class _7FluentWaitPr {
+public class _7FluentWaitPractice {
     @Test
     public void fluentWaitPr() {
         WebDriverManager.chromedriver().setup();
