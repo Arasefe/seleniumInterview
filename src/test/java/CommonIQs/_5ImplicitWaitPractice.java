@@ -15,10 +15,12 @@ public class _5ImplicitWaitPractice {
     public static void implicitWaitPractice() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
-        WebElement element = driver.findElement(By.cssSelector("[id='start'] button"));
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 
+
+        driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
+
+        WebElement element = driver.findElement(By.cssSelector("[id='start'] button"));
         /*
         WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOf(element));

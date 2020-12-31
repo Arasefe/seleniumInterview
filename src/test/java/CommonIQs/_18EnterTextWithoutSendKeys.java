@@ -19,6 +19,7 @@ public class _18EnterTextWithoutSendKeys {
         JS.executeScript("document.getElementById('twotabsearchtextbox').value='Best toy'");
 
     }
+
     @Test
     public void enterTextWithoutSendKeys2() {
         WebDriverManager.chromedriver().setup();
@@ -37,5 +38,17 @@ public class _18EnterTextWithoutSendKeys {
 
 
     }
-}
+    @Test
+    public void enterTextWithOutSendKeys2() {
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.etsy.com");
+        driver.manage().window().maximize();
+        JavascriptExecutor JS = (JavascriptExecutor) driver;
+        // 2. Use executeScript() method to enter item in the search box
+        JS.executeScript("document.getElementById('global-enhancements-search-query').value='I love Banu'");
 
+
+    }
+
+}

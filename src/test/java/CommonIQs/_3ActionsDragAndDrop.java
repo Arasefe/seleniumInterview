@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,7 +22,7 @@ public class _3ActionsDragAndDrop {
         Actions actions=new Actions(driver);
         WebElement source=driver.findElement(By.xpath("//div[@id='column-a']"));
         WebElement target=driver.findElement(By.xpath("//div[@id='column-b']"));
-        actions.dragAndDrop(source,target).perform();
+        actions.dragAndDrop(source,target).build().perform();
 
     }
 
