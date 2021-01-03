@@ -12,9 +12,10 @@ import org.testng.annotations.Test;
 public class _4AlertHandlingPractice {
 
     @Test
-    public void handlingAlert() {
+    public void handlingAlert1() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("http://practice.cybertekschool.com/javascript_alerts");
         // For Information alert
         WebElement infoAlert=driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
@@ -31,5 +32,17 @@ public class _4AlertHandlingPractice {
         promptAlert.click();
         alert = driver.switchTo().alert();
         alert.sendKeys("This is prompt alert");
+    }
+    @Test
+    public void handlingAlert2(){
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://practice.cybertekschool.com/javascript_alerts");
+        driver.manage().window().fullscreen();
+        // For Information alert
+        WebElement infoAlert=driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
+        infoAlert.click();
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
     }
 }
