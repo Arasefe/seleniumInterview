@@ -24,7 +24,7 @@ public class _15HandlingBrokenLinks {
         //Step 3 -if status code >400 then that url is not working-> link which tied to url is broken
         //a[href*="soapui"]'
         driver.get("https://rahulshettyacademy.com/AutomationPractice/");
-        List<WebElement> links=   driver.findElements(By.cssSelector("li[class='gf-li'] a"));
+        List<WebElement> links=driver.findElements(By.cssSelector("li[class='gf-li'] a"));
         SoftAssert a =new SoftAssert();         // SoftAssert
         for(WebElement link : links) {
             String url= link.getAttribute("href");
@@ -33,7 +33,7 @@ public class _15HandlingBrokenLinks {
             conn.connect();
             int respCode = conn.getResponseCode();
             System.out.println(respCode);
-            a.assertTrue(respCode<400, "The link with Text"+link.getText()+" is broken with code" +respCode);
+            a.assertTrue(respCode!=400, "The link with Text"+link.getText()+" is broken with code " +respCode);
         }
         a.assertAll();
     }
