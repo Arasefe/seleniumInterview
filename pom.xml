@@ -50,6 +50,12 @@
         <artifactId>javafaker</artifactId>
         <version>1.0.2</version>
     </dependency>
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-htmlunit-driver</artifactId>
+        <version>2.50.1</version>
+        <scope>test</scope>
+    </dependency>
 
 </dependencies>
 
