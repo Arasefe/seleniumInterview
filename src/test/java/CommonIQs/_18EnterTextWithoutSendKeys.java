@@ -35,6 +35,7 @@ public class _18EnterTextWithoutSendKeys {
         JavascriptExecutor JS = (JavascriptExecutor) driver;
         // 2. Use executeScript() method to enter item in the search box
         JS.executeScript("document.getElementByName('q').value='multifunctional tool'");
+        //JS.executeScript("document.getElementByName('q').value='multifunctional tool'");
 
 
     }
@@ -46,7 +47,20 @@ public class _18EnterTextWithoutSendKeys {
         driver.manage().window().maximize();
         JavascriptExecutor JS = (JavascriptExecutor) driver;
         // 2. Use executeScript() method to enter item in the search box
-        JS.executeScript("document.getElementById('global-enhancements-search-query').value='I love Banu'");
+        JS.executeScript("document.getElementById('global-enhancements-search-query').value='I love Aras'");
+
+
+    }
+
+    @Test
+    public void enterTextWithOutSendKeys3() {
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.etsy.com");
+        driver.manage().window().maximize();
+        JavascriptExecutor JS = (JavascriptExecutor) driver;
+        // 2. Use executeScript() method to enter item in the search box
+        JS.executeScript("document.getElementById('global-enhancements-search-query').value='apple'");
 
 
     }

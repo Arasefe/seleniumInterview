@@ -40,4 +40,20 @@ public class _34BasicAuthentication {
 
     }
 
+    @Test
+    public void basicAuthentication2(){
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://the-internet.herokuapp.com/");
+
+        WebElement basicAuth=driver.findElement(By.xpath("//a[.='Basic Auth']"));
+        basicAuth.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        //alert.authenticateUsing(new UserAndPassword("admin","admin"));
+
+    }
+
+
 }

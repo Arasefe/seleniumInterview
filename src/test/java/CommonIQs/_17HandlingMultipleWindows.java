@@ -18,10 +18,10 @@ public class _17HandlingMultipleWindows {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://www.qaclickacademy.com/practice.php");
-        WebElement footerDriver = driver.findElement(By.id("gf-BIG"));            // Limiting webDriver scope
+        WebElement footerDriver = driver.findElement(By.id("gf-BIG"));                      // Limiting webDriver scope
         WebElement columnDriver = footerDriver.findElement(By.xpath("//div[@id='gf-BIG']/table/tbody/tr/td"));
         for (int i = 1; i < columnDriver.findElements(By.tagName("a")).size(); i++) {
-            String clinkOnLink = Keys.chord(Keys.COMMAND, Keys.ENTER);                    // Keys.CONTROL-->Windows
+            String clinkOnLink = Keys.chord(Keys.COMMAND, Keys.ENTER);                      // Keys.CONTROL-->Windows
             columnDriver.findElements(By.tagName("a")).get(i).sendKeys(clinkOnLink);
             Thread.sleep(5000);
         }

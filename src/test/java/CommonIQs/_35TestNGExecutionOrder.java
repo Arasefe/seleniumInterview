@@ -24,9 +24,17 @@ public class _35TestNGExecutionOrder {
     public void testB(){
         Assert.assertEquals("A","A");
     }
+    @Test
+    public void test1(){
+        Assert.assertEquals(4,4);
+    }
 
     @Test
     public void testC(){
+        Assert.assertEquals(4,4);
+    }
+    @Test
+    public void test3(){
         Assert.assertEquals(4,4);
     }
     @Test

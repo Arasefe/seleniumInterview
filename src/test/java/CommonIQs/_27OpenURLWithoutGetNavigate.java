@@ -22,7 +22,7 @@ public class _27OpenURLWithoutGetNavigate {
         js.executeScript(script);
 
         System.out.println(driver.getCurrentUrl());
-        //driver.quit();
+        driver.quit();
     }
 }
 

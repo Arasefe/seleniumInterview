@@ -70,6 +70,7 @@ public class _37VerifyToolTip {
         actions.moveToElement(element).perform();
 
         WebElement toolTip = driver.findElement(By.xpath("//input[@id='age']"));
+
         //Verify the tooltip text
         Assert.assertEquals(toolTip.getText(),"We ask for your age only for statistical purposes.");
         // Close the main window
