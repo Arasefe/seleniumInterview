@@ -12,29 +12,29 @@ import org.testng.annotations.Test;
 public class _20HandlingSSLCertifications {
     @Test
     public void handlingSSLCertifications() {
-        DesiredCapabilities ch = DesiredCapabilities.chrome();
-        //ch.acceptInsecureCerts();
-        ch.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
-        ch.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-        //Belows to your local browser
-        ChromeOptions c = new ChromeOptions();
-        c.merge(ch);
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver(c);
-
+//        DesiredCapabilities ch = DesiredCapabilities.chrome();
+//        //ch.acceptInsecureCerts();
+//        ch.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+//        ch.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+//        //Belows to your local browser
+//        ChromeOptions c = new ChromeOptions();
+//        c.merge(ch);
+//        WebDriverManager.chromedriver().setup();
+//        WebDriver driver = new ChromeDriver(c);
+//
 
     }
 
     public void handlingSSLCertifications1(){
-        DesiredCapabilities ch=DesiredCapabilities.chrome();
-        //ch.acceptInsecureCerts();
-        ch.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
-        ch.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-        //Belows to your local browser
-        ChromeOptions c= new ChromeOptions();
-        c.merge(ch);
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver=new ChromeDriver(c);
+//        DesiredCapabilities ch=DesiredCapabilities.chrome();
+//        //ch.acceptInsecureCerts();
+//        ch.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+//        ch.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+//        //Belows to your local browser
+//        ChromeOptions c= new ChromeOptions();
+//        c.merge(ch);
+//        WebDriverManager.chromedriver().setup();
+//        WebDriver driver=new ChromeDriver(c);
 
 
     }
