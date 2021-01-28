@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.openqa.selenium.support.locators.RelativeLocator.withTagName;
 
 public class _22RelativeLocator {
     /*
@@ -23,37 +22,37 @@ public class _22RelativeLocator {
 
     @Test
     public void relativeLocator() {
-        WebDriverManager.chromedriver().setup();
-        RemoteWebDriver driver = new ChromeDriver();
-        driver.get("https://accounts.lambdatest.com/login");
-        driver.manage().window().maximize();
-
-        // Find the label element above the login text box
-        WebElement signIn = driver.findElement(By.cssSelector("span[class='orsignup']"));
-
-        // Locate the username box
-
-        WebElement userNameBox = driver.findElement(withTagName("input")
-                .below(signIn));
-
-        userNameBox.sendKeys("user-name");
-
-        // Locate the textbox where password should be inputted
-
-        WebElement heightPasswordBox = driver.findElement(withTagName("input")
-                .below(userNameBox));
-
-        heightPasswordBox.sendKeys("password");
-
-        // Locate the submit button
-
-        WebElement submitButton = driver.findElement(By.cssSelector("button[type='submit']"));
-
-        submitButton.click();
-
-        //Wait for 10 seconds to observe the output
-
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//        WebDriverManager.chromedriver().setup();
+//        RemoteWebDriver driver = new ChromeDriver();
+//        driver.get("https://accounts.lambdatest.com/login");
+//        driver.manage().window().maximize();
+//
+//        // Find the label element above the login text box
+//        WebElement signIn = driver.findElement(By.cssSelector("span[class='orsignup']"));
+//
+//        // Locate the username box
+//
+//        WebElement userNameBox = driver.findElement(withTagName("input")
+//                .below(signIn));
+//
+//        userNameBox.sendKeys("user-name");
+//
+//        // Locate the textbox where password should be inputted
+//
+//        WebElement heightPasswordBox = driver.findElement(withTagName("input")
+//                .below(userNameBox));
+//
+//        heightPasswordBox.sendKeys("password");
+//
+//        // Locate the submit button
+//
+//        WebElement submitButton = driver.findElement(By.cssSelector("button[type='submit']"));
+//
+//        submitButton.click();
+//
+//        //Wait for 10 seconds to observe the output
+//
+//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 }
 

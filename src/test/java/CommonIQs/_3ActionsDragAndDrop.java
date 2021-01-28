@@ -53,10 +53,7 @@ public class _3ActionsDragAndDrop {
         wait.until(ExpectedConditions.visibilityOf(bestSellers));
         WebElement el = driver.findElement(By.xpath("//a[.='Conditions of Use']"));
         wait.until(ExpectedConditions.visibilityOf(el));
-        //actions.doubleClick(signIn).perform();
-        //actions.contextClick().perform();
-        //actions.moveToElement(el).click();
-        //actions.doubleClick().perform();
+
         actions.moveToElement(el).doubleClick().build().perform();
     }
 
