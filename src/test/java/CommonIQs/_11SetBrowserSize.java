@@ -8,18 +8,15 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
-public class _13SetBrowserSizeWithJSExecutor {
+public class _11SetBrowserSize {
 
     @Test
     public void resizeWindow1() {
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize(); //if this does not work
-
-
+        WebDriver driver;
+        //driver.manage().window().maximize(); if this does not work
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("window-size=1400,900");
-        options.addArguments("window-size=1400,600");
+        options.addArguments("window-size=1600,800");
         driver = new ChromeDriver(options);
         driver.get("https://www.google.com");
 
@@ -40,17 +37,6 @@ public class _13SetBrowserSizeWithJSExecutor {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com");
         driver.manage().window().fullscreen();
-
-
-    }
-
-    @Test
-    public void resizeWindow4() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.google.com");
-        Dimension dimension=new Dimension(1200,900);
-        driver.manage().window().setSize(dimension);
 
 
     }

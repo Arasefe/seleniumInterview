@@ -16,14 +16,25 @@ public class _6ExplicitWaitPractice {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-
-        driver.get("https://www.amazon.com");
+        driver.get("https://the-internet.herokuapp.com");
         WebElement element=driver.findElement(By.cssSelector(""));
         WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOf(element));
         wait.until(ExpectedConditions.elementToBeClickable(element));
         wait.until(ExpectedConditions.invisibilityOfAllElements(element));
 
+
+    }
+
+    @Test
+    public void alertToBeVisible(){
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        driver.get("https://www.amazon.com");
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.alertIsPresent());
 
     }
 }

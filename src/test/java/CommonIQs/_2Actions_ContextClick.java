@@ -7,12 +7,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class _2Actions_ContextClick {
 
     @Test
-    public void contextClick1(){
+    public void contextClick1() {
         /*
         1. Go to https://the-internet.herokuapp.com/context_menu
         2. Right click to the box.
@@ -26,14 +27,15 @@ public class _2Actions_ContextClick {
         // Go to website
         driver.get("https://the-internet.herokuapp.com/context_menu");
         // Right click to the box.
-        WebElement box=driver.findElement(By.xpath("//div[@id='hot-spot']"));
-        Actions actions=new Actions(driver);
+        WebElement box = driver.findElement(By.cssSelector("div[id='hot-spot']"));
+        Actions actions = new Actions(driver);
         // Right click to the box.
         actions.contextClick(box).build().perform();
         // Accept alert
-        driver.switchTo().alert().accept();
+        Alert alert = driver.switchTo().alert();
+        Assert.assertEquals(alert.getText(), "You selected a context menu");
+        alert.accept();
     }
-
 
 
     @Test
@@ -52,21 +54,16 @@ public class _2Actions_ContextClick {
     }
 
     @Test
-    public void contextClick(){
-
+    public void contextClick3() {
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
-        try {
-            // Navigate to Url
-            driver.get("https://google.com");
-
-            // Store 'google search' button web element
-            WebElement searchBtn = driver.findElement(By.linkText("Sign in"));
-            Actions actionProvider = new Actions(driver);
-            // Perform context-click action on the element
-            actionProvider.contextClick(searchBtn).build().perform();
-        } finally {
-            driver.quit();
-        }
+        // Navigate to Url
+        driver.get("https://google.com");
+        // Store 'google search' button web element
+        WebElement searchBtn = driver.findElement(By.linkText("Sign in"));
+        Actions action = new Actions(driver);
+        // Perform context-click action on the element
+        action.contextClick(searchBtn).build().perform();
 
     }
 

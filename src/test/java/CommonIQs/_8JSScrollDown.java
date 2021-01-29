@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class _9ScrollDownPractice {
+public class _8JSScrollDown {
 
     @Test
     public void scrollDown() {
@@ -18,7 +18,6 @@ public class _9ScrollDownPractice {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://www.qaclickacademy.com/practice.php");
-
         JavascriptExecutor JS=(JavascriptExecutor)driver;
         JS.executeScript("window.scrollBy(0,500)");
         // or

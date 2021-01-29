@@ -29,7 +29,7 @@ public class _7FluentWaitPractice {
                 .pollingEvery(Duration.ofSeconds(1))
                 .ignoring(NoSuchElementException.class);
 
-        WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
+        WebElement aras = wait.until(new Function<WebDriver, WebElement>() {
             public WebElement apply(WebDriver driver) {
                 WebElement result = driver.findElement(By.xpath("//div[@id='finish']/h4"));
                 if (!result.isDisplayed()) {

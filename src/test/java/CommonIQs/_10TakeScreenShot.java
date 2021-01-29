@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 
-public class _12TakeScreenShot {
+public class _10TakeScreenShot {
 
     @Test
     public void tearDown() {
@@ -19,11 +19,11 @@ public class _12TakeScreenShot {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com");
         //byte[] scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        try{
-            FileUtils.copyFile(scrFile,new File("D:\\savescreen.png"));
-        }catch (IOException e){
-            e.printStackTrace();
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(scrFile, new File("D:\\savescreen.png"));
+        } catch (IOException e) {
+            e.getStackTrace();
         }
     }
 }
