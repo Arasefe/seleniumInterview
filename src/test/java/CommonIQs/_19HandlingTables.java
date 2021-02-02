@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class _21HandlingTables {
+public class _19HandlingTables {
     @Test
     public void handlingTables() {
         int sum = 0;

@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class _16HandlingIFrames {
+public class _14HandlingIFrames {
     @Test
     public void handlingIframes(){
         WebDriverManager.chromedriver().setup();
@@ -24,6 +24,6 @@ public class _16HandlingIFrames {
         WebElement target=driver.findElement(By.id("droppable"));
         actions.dragAndDrop(source,target).build().perform();
         driver.switchTo().defaultContent();
-        driver.close();
+        //driver.close();
     }
 }

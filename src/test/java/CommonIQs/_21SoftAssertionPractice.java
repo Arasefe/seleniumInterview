@@ -13,7 +13,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
-public class _23SoftAssertionPractice {
+public class _21SoftAssertionPractice {
 
     @Test
     public void softAssert() throws IOException {
@@ -41,7 +41,7 @@ public class _23SoftAssertionPractice {
 
             System.out.println(respCode);
 
-            a.assertTrue(respCode < 400, "The link with Text" + link.getText() + " is broken with code" + respCode);
+            a.assertTrue(respCode > 400, "The link with Text" + link.getText() + " is broken with code" + respCode);
 
         }
         a.assertAll();

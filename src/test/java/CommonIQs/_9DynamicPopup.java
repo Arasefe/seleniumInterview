@@ -104,5 +104,32 @@ public class _9DynamicPopup {
 
     }
 
+    @Test
+    public void dynamic_pop_up(){
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver=new ChromeDriver();
+        //Locating the warning/information alert button to click it
+        try {
+            WebElement warningAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Confirm']"));
+            //click to the button
+            warningAlertButton.click();
+            //Create alert instance
+            Alert alert = driver.switchTo().alert();
+            //We can either accept(), or dismiss() the confirmation alert
+            alert.accept();
+        }catch(Exception exception){
+            exception.getStackTrace();
+        }
+        //Locating the result text web element
+        WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
+        //Assert
+        Assert.assertTrue(resultText.isDisplayed(), "Text is not displayed. Verification FAILED!!!");
+        // Task
+        WebElement jsPrompt= driver.findElement(By.xpath("//button[.='Click for JS Prompt']"));
+        jsPrompt.sendKeys("Tulpar"+ Keys.ENTER);
+
+
+    }
+
 }
 

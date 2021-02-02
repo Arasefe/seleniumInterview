@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class _25StreamCollectors {
+public class _23StreamCollectors {
     @Test
     public static void streamCollectors() {
 

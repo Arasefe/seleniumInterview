@@ -11,7 +11,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class _36HtmlUnitDriverIntegration {
+public class _34HtmlUnitDriverIntegration {
 
     @Test
     public void testA(){

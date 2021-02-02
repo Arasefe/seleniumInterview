@@ -8,9 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class _24OpenLinksInDifferentTabs {
+public class _28OpenMultipleTabs {
     @Test
-    public void openLinksInDifferentTabs() {
+    public void openMultipleTabs(){
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -18,14 +18,14 @@ public class _24OpenLinksInDifferentTabs {
 
         System.out.println(driver.findElements(By.tagName("a")).size());
 
-        WebElement footerDriver = driver.findElement(By.id("gf-BIG"));            // Limiting webDriver scope
+        WebElement footerDriver=driver.findElement(By.id("gf-BIG"));            // Limiting webDriver scope
         System.out.println(footerDriver.findElements(By.tagName("a")).size());
 
-        WebElement columnDriver = footerDriver.findElement(By.xpath("//div[@id='gf-BIG']/table/tbody/tr/td"));
+        WebElement columnDriver=footerDriver.findElement(By.xpath("//div[@id='gf-BIG']/table/tbody/tr/td"));
         System.out.println(columnDriver.findElements(By.tagName("a")).size());
 
         for (int i = 1; i < columnDriver.findElements(By.tagName("a")).size(); i++) {
-            String clinkOnLink = Keys.chord(Keys.COMMAND, Keys.ENTER);            //
+            String clinkOnLink= Keys.chord(Keys.COMMAND,Keys.ENTER);            //
             columnDriver.findElements(By.tagName("a")).get(i).sendKeys(clinkOnLink);
         }
 

@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class _38MultipleKeyPress {
+public class _36MultipleKeyPress {
     @Test
     public void test1(){
         WebDriverManager.chromedriver().setup();

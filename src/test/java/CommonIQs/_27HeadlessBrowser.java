@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.sql.Driver;
 
-public class _31HeadlessBrowser {
+public class _27HeadlessBrowser {
 
     @Test
     public  void methodName1(){

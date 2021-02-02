@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class _33ExceptionTest {
+public class _30ExceptionTest {
     @Test(expectedExceptions = NoSuchElementException.class)
     public void exceptionTest(){
         WebDriverManager.chromedriver().setup();

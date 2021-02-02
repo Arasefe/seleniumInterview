@@ -11,17 +11,19 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 
-public class _17HandlingMultipleWindows {
+public class _15HandlingMultipleWindows {
     @Test
     public void handlingMultipleWindows() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://www.qaclickacademy.com/practice.php");
-        WebElement footerDriver = driver.findElement(By.id("gf-BIG"));                      // Limiting webDriver scope
+        WebElement footerDriver = driver.findElement(By.id("gf-BIG"));
+        // Limiting webDriver scope
         WebElement columnDriver = footerDriver.findElement(By.xpath("//div[@id='gf-BIG']/table/tbody/tr/td"));
         for (int i = 1; i < columnDriver.findElements(By.tagName("a")).size(); i++) {
-            String clinkOnLink = Keys.chord(Keys.COMMAND, Keys.ENTER);                      // Keys.CONTROL-->Windows
+            // Keys.CONTROL-->Windows
+            String clinkOnLink = Keys.chord(Keys.COMMAND, Keys.ENTER);
             columnDriver.findElements(By.tagName("a")).get(i).sendKeys(clinkOnLink);
             Thread.sleep(5000);
         }
@@ -34,7 +36,7 @@ public class _17HandlingMultipleWindows {
             driver.switchTo().window(it.next());
             System.out.println(driver.getTitle());
         }
-        driver.close();
+        //driver.close();
     }
 
     @Test

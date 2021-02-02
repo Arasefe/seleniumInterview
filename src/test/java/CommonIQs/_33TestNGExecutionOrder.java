@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class _35TestNGExecutionOrder {
+public class _33TestNGExecutionOrder {
     @BeforeClass
     public void test(){
         WebDriverManager.chromedriver().setup();

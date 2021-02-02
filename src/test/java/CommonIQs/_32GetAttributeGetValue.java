@@ -7,21 +7,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import java.util.List;
-
-public class _14FindingAllLinks {
+public class _32GetAttributeGetValue {
 
     @Test
-    public void findAllLinks() {
+    public void getAttributeMethod(){
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("http://www.qaclickacademy.com/practice.php");
-        List<WebElement> list=driver.findElements(By.tagName("a"));
-        for (WebElement webElement : list) {
-            System.out.println(webElement.getText());
-        }
-        driver.close();
+        driver.get("https://www.amazon.com");
+
+
+        WebElement el=driver.findElement(By.xpath("//a[@class='nav-a']"));
+        System.out.println(el.getAttribute("className"));
 
 
     }
