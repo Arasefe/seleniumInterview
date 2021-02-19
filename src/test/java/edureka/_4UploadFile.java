@@ -13,33 +13,27 @@ import java.sql.Driver;
 public class _4UploadFile {
     @Test
     public void uploading_file_test(){
-        //Getting the page
+        /*
+        1. Find the Upload Button on the web
+        2. Copy the file path as path name and assign it to a String variable
+        3. Send the path to the Upload Button with sendKeys()
+         */
+
         WebDriverManager.chromedriver().setup();
         WebDriver driver=new ChromeDriver();
         driver.get("http://practice.cybertekschool.com/upload");
-
+        driver.manage().window().maximize();
         // get the path of the file you want to upload
         // MAC: right click on the file you want to upload
         // Click and hold "OPTION" button and select "copy as path name"
 
-        //Windows: Right click -> properties -> copy from location
-        //OR SHIFT + RIGHT CLICK --> Copy as path
-        String path = "/Users/banuyildirim/Desktop/AUTO/BMW.webp";
-
-        //String windowsPath = "C:\\Users\\direc\\Desktop\\Sample.xlsx";
-
-        //Locate the upload web element
+        // Locate the upload web element
         WebElement uploadInput = driver.findElement(By.id("file-upload"));
-
+        // Copy the file path
+        String path = "/Users/banuyildirim/Desktop/AUTO/maxresdefault.jpg";
         //send the path of the file to uploadInput webElement
         BrowserUtils.wait(3);
         uploadInput.sendKeys(path);
 
-        //locate the UPLOAD button
-        WebElement uploadButton = driver.findElement(By.id("file-submit"));
-
-        //click to upload button
-        BrowserUtils.wait(2);
-        uploadButton.click();
     }
 }

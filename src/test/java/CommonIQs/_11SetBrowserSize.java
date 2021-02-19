@@ -41,4 +41,16 @@ public class _11SetBrowserSize {
 
     }
 
+    @Test
+    public void resizeWindow4() {
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver;
+        //driver.manage().window().maximize(); if this does not work
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("start-maximized");
+        driver = new ChromeDriver(options);
+        driver.get("https://www.google.com");
+
+    }
+
 }

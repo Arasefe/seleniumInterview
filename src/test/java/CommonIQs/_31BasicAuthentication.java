@@ -54,5 +54,29 @@ public class _31BasicAuthentication {
         Assert.assertEquals(driver.getTitle(),"Authentication Successful");
     }
 
+    @Test @Beta
+    public void basicAuthentication5(){
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
+        Assert.assertTrue(true);
+
+
+    }
+
+    @Test
+    public void basicAuthentication6(){
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
+        Assert.assertTrue(true);
+
+
+    }
+
+
+
 
 }

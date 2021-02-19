@@ -18,7 +18,7 @@ public class _27HeadlessBrowser {
         WebDriverManager.chromedriver().setup();
         ChromeOptions option=new ChromeOptions();
         // option.setHeadless(true);
-        // option.addArguments("--headless", "--disable-gpu", "--window-size=1400,800","--ignore-certificate-errors");
+        // option.addArguments("--headless");
         option.addArguments("--headless");
         WebDriver driver = new ChromeDriver(option);
         // Set headless chrome
@@ -33,7 +33,7 @@ public class _27HeadlessBrowser {
         ChromeOptions option=new ChromeOptions();
          option.setHeadless(true);
 
-        // options.addArguments("--headless", "--disable-gpu", "--window-size=1400,800","--ignore-certificate-errors");
+        // options.addArguments("--headless");
         //option.addArguments("--headless");
         WebDriver driver = new ChromeDriver(option);
         // Set headless chrome
@@ -45,7 +45,7 @@ public class _27HeadlessBrowser {
     public  void methodName3(){
         WebDriverManager.chromedriver().setup();
         ChromeOptions option=new ChromeOptions();
-        // option.addArguments("--headless", "--disable-gpu", "--window-size=1400,800","--ignore-certificate-errors");
+        // option.addArguments("--headless");
         //option.addArguments("--headless");
         WebDriver driver = new ChromeDriver(option);
         // Set headless chrome
