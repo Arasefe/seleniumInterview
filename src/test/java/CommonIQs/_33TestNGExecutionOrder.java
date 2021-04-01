@@ -16,28 +16,28 @@ public class _33TestNGExecutionOrder {
     }
 
 
-    @Test
+    @Test(priority = 0)
     public void testA(){
         Assert.assertEquals(3,3);
     }
-    @Test
+    @Test(priority = 1)
     public void testB(){
         Assert.assertEquals("A","A");
     }
-    @Test
+    @Test(priority = 2)
     public void test1(){
         Assert.assertEquals(4,4);
     }
 
-    @Test
+    @Test(priority = 3)
     public void testC(){
         Assert.assertEquals(4,4);
     }
-    @Test
+    @Test(priority=4)
     public void test3(){
         Assert.assertEquals(4,4);
     }
-    @Test
+    @Test(priority = 5)
     public void testD(){
         Assert.assertEquals("B","B");
     }

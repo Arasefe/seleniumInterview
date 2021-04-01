@@ -72,6 +72,21 @@ public class _1Actions_Hover {
         driver.close();
     }
 
+    @Test
+    public void hoverOver4(){
+
+        driver.navigate().to("http://practice.cybertekschool.com/hovers");
+        WebDriverWait wait=new WebDriverWait(driver,15);
+        WebElement picOne=driver.findElement(By.xpath("//div[@class='figure']/img[1]"));
+        wait.until(ExpectedConditions.elementToBeClickable(picOne));
+        Actions actions=new Actions(driver);
+        actions.moveToElement(picOne).perform();
+
+        WebElement userOne=driver.findElement(By.xpath("//div[@class='figure'][1]/div/h5"));
+        Assert.assertTrue(userOne.getText().equals("name: user1"));
+        //driver.close();
+    }
+
 
 
 }

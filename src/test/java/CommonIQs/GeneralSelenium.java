@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class Ramandeep {
+public class GeneralSelenium {
     @Test
     public void test1(){
         WebDriverManager.chromedriver().setup();

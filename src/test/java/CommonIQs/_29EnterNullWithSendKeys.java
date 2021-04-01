@@ -13,7 +13,7 @@ public class _29EnterNullWithSendKeys {
         ChromeDriver driver=new ChromeDriver();
         driver.get("https://www.google.com");
         WebElement el=driver.findElement(By.name("q"));
-        el.sendKeys(null);
+        el.sendKeys("null");
         el.sendKeys(Keys.ENTER);            //IllegalArgumentException: Keys to send should be a not null CharSequence
 
     }

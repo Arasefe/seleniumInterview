@@ -27,17 +27,12 @@ public class _35VerifyToolTip {
         // Find the Github icon at the top right of the header
         WebElement github = driver.findElement(By.xpath("//*[@class='soc-ico show-round']/a[4]"));
         //get the value of the "title" attribute of the github icon
-        String actualTooltip = github.getAttribute("title");
+        String actualTooltip = github.getAttribute("title");        // getAttribute("title")
         //Assert the tooltip's value is as expected
         Assert.assertEquals(actualTooltip,"Github");
         // driver.close();
     }
 
-    /* This is the second way to verify the tooltip Using Action Class
-       1. Find the WebElement representing the "github" icon.
-       2. Get its "title" attribute using the getAttribute() method.
-       3. Assert the value against the expected tooltip value.
-    */
     @Test
     public void toolTipVerification2() {
         WebDriverManager.chromedriver().setup();
@@ -59,6 +54,11 @@ public class _35VerifyToolTip {
 
 
     public void toolTip(){
+        /* This is the second way to verify the tooltip
+         1. Find the Tooltip
+         2. Using the Actions class mimic mouse hover over
+         3. Assert the value against the expected tooltip value.
+     */
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();

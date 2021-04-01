@@ -20,7 +20,7 @@ public class _13HandlingBrokenLinks {
         WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
 
-        //Step 1 - IS to get all urls tied up to the links using Selenium
+        //Step 1 - Get all urls tied up to the links using Selenium
         //Step 2 - Java methods will call URL's and get you the status code
         //Step 3 - if status code >400 then that url is not working. Link which tied to url is broken a[href*="soapui"]
 
