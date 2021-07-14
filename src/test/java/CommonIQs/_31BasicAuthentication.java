@@ -77,6 +77,19 @@ public class _31BasicAuthentication {
     }
 
 
+    @Test
+    public void basicAuthentication7() throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("http://localhost:8080/");
+        Thread.sleep(2000);
+        WebElement msg=driver.findElement(By.xpath("//div[.='hello']"));
+        Assert.assertTrue(msg.isDisplayed());
+
+    }
+
+
 
 
 }

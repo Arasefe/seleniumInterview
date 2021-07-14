@@ -87,9 +87,10 @@ public class _15HandlingMultipleWindows {
         //3 Step I iterate through and switchTo()
         while (it.hasNext()) {
             driver.switchTo().window(it.next());
-            System.out.println(driver.getTitle());
+            driver.close();
+
         }
-        driver.close();
+
     }
 }
 

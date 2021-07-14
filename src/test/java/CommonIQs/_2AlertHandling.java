@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class _4AlertHandlingPractice {
+public class _2AlertHandling {
 
     @Test
     public void handlingAlert1() throws InterruptedException{
