@@ -15,7 +15,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class _1Actions_Hover {
+public class _1ActionsHover {
     static WebDriver driver;
     @BeforeMethod
     public void setUp(){

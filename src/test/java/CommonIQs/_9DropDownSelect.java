@@ -24,7 +24,7 @@ public class _9DropDownSelect {
         Select select = new Select(driver.findElement(By.id("dropdown")));
         select.selectByVisibleText("Option 1");
         String choice = select.getFirstSelectedOption().getText();
-        Assert.assertEquals(choice,"Option 1");
+        Assert.assertEquals(choice, "Option 1");
         select.selectByIndex(2);
     }
 
@@ -36,9 +36,9 @@ public class _9DropDownSelect {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://practice.cybertekschool.com/dropdown");
         Select select = new Select(driver.findElement(By.xpath("//select[@id='year']")));
-        String selected=select.getFirstSelectedOption().getText();
-        Assert.assertEquals(selected,"2021");
-        List<WebElement> list=select.getOptions();
+        String selected = select.getFirstSelectedOption().getText();
+        Assert.assertEquals(selected, "2021");
+        List<WebElement> list = select.getOptions();
         for (WebElement webElement : list) {
             System.out.println(webElement.getText());
         }
@@ -54,9 +54,9 @@ public class _9DropDownSelect {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://practice.cybertekschool.com/dropdown");
         Select select = new Select(driver.findElement(By.id("state")));
-        String selected=select.getFirstSelectedOption().getText();
-        Assert.assertEquals(selected,"Select a State");
-        Set<WebElement> set= (Set<WebElement>) select.getOptions();
+        String selected = select.getFirstSelectedOption().getText();
+        Assert.assertEquals(selected, "Select a State");
+        Set<WebElement> set = (Set<WebElement>) select.getOptions();
         for (WebElement webElement : set) {
             System.out.println(webElement.getText());
         }
@@ -64,5 +64,22 @@ public class _9DropDownSelect {
 
     }
 
+    @Test
+    public void method4() {
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get("https://www.cvs.com/minuteclinic");
+        WebElement vv=driver.findElement(By.xpath("//span[.='Video Visit']"));
+        vv.click();
+        Select select = new Select(driver.findElement(By.xpath("//select[@id='state-label']")));
+        String chosen=select.getFirstSelectedOption().getText();
+        Assert.assertEquals(chosen,"Select a state");
+        select.selectByVisibleText("Nevada");
+        String choice = select.getFirstSelectedOption().getText();
+        Assert.assertEquals(choice, "Nevada");
+        driver.close();
 
+    }
 }
