@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -19,30 +20,78 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 public class WaitManipulation {
-    @Test
-    public static void implicitWaitPractice() {
+    static WebDriver driver;
+
+    @BeforeMethod
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+    }
+
+    @Test
+    public void implicitWait() {
         driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
-        WebElement element = driver.findElement(By.cssSelector("[id='start'] button"));
-        //button[text()='Start']
-        element.click();
-        WebDriverWait wait=new WebDriverWait(driver,20);
-        WebElement text=driver.findElement(By.xpath("//h4[.='Hello World!']"));
-        wait.until(ExpectedConditions.elementToBeClickable(text));
-        Assert.assertEquals(text.getText(),"Hello World!");
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+    }
+
+
+    @Test
+    public void explicitWait1() {
+
+        driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
+        WebElement element = driver.findElement(By.xpath(""));
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.visibilityOf(element));
 
 
     }
 
     @Test
-    public void explicitWait(){
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+    public void fluentWait1() {
+        driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
+        WebElement start = driver.findElement(By.xpath("//div[@id='start']/button"));
+        start.click();
+        // Waiting 30 seconds for an element to be present on the page, checking
+        // for its presence once every 5 seconds.
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver);
+//
+//                .pollingEvery(Duration.ofSeconds(5));
+//
+//        WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
+//            public WebElement apply(WebDriver driver) {
+//                WebElement result=driver.findElement(By.xpath("//div[@id='finish']/h4"));
+//                if(!result.isDisplayed()){
+//                    return null;
+//                }
+//                Assert.assertTrue(result.getText().equals("Hello World!"),"Assertion FAILED");
+//                return driver.findElement(By.xpath("//div[@id='finish']/h4"));
+//            }
+//        });
+    }
+
+    @Test
+    public static void implicitWaitPractice() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
+        WebElement element = driver.findElement(By.cssSelector("[id='start'] button"));
+        //button[text()='Start']
+        element.click();
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        WebElement text = driver.findElement(By.xpath("//h4[.='Hello World!']"));
+        wait.until(ExpectedConditions.elementToBeClickable(text));
+        Assert.assertEquals(text.getText(), "Hello World!");
+
+
+    }
+
+    @Test
+    public void explicitWait2() {
+
         driver.manage().window().maximize();
         driver.get("https://the-internet.herokuapp.com");
-        WebElement element=driver.findElement(By.cssSelector(""));
+        WebElement element = driver.findElement(By.cssSelector(""));
         WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOf(element));
         wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -52,7 +101,7 @@ public class WaitManipulation {
     }
 
     @Test
-    public void alertToBeVisible(){
+    public void alertToBeVisible() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
