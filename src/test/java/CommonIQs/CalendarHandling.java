@@ -5,15 +5,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
 public class CalendarHandling {
+    static WebDriver driver;
+    @BeforeClass
+    private void before(){
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+    }
+
     @Test
     public void handlingCalender() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+
         driver.get("https://www.path2usa.com/travel-companions");
         //April 23
         driver.findElement(By.xpath(".//*[@id='travel_date']")).click();

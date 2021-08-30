@@ -14,10 +14,14 @@ import java.net.URL;
 import java.util.List;
 
 public class BrokenLinksHandling {
+    static WebDriver driver;
+    private void before(){
+        WebDriverManager.chromedriver().setup();
+        driver=new ChromeDriver();
+    }
+
     @Test
     public void brokenLinkHandling() throws IOException {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
 
         //Step 1 - Get all urls tied up to the links using Selenium

@@ -23,14 +23,7 @@ public class AATest {
     @Test
     private void method(){
         driver.manage().window().maximize();
-        driver.get("https://the-internet.herokuapp.com/context_menu");
-        WebElement box=driver.findElement(By.xpath("//*[@id='hot-spot']"));
-        Actions action=new Actions(driver);
-        action.contextClick(box).build().perform();
+        driver.get("https://www.amazon.com");
 
-        Alert alert=driver.switchTo().alert();
-        String alertMsg=alert.getText();
-        Assert.assertEquals(alertMsg,"You selected a context menu");
-        alert.accept();
     }
 }

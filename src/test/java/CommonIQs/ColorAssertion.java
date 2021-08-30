@@ -9,6 +9,11 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class ColorAssertion {
+    static WebDriver driver;
+    private void before(){
+
+    }
+
     @Test
     public void colorAssertionMethod(){
         WebDriverManager.chromedriver().setup();
