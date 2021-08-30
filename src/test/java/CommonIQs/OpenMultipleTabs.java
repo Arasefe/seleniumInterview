@@ -6,13 +6,18 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class OpenMultipleTabs {
+    private static WebDriver driver;
+    @BeforeClass
+    private void before(){
+        WebDriverManager.chromedriver().setup();
+        driver=new ChromeDriver();
+    }
     @Test
     public void openMultipleTabs(){
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://www.qaclickacademy.com/practice.php");
 

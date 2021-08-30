@@ -4,15 +4,22 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
 public class FindingNthElement {
+    static WebDriver driver;
+
+    @BeforeClass
+    private void before(){
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+    }
+
     @Test
     public void nthElementXpath1(){
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         String url = "https://www.tutorialspoint.com/index.htm";
         driver.get(url);
         driver.manage().window().maximize();
@@ -25,8 +32,6 @@ public class FindingNthElement {
     }
     @Test
     public void nthElementXpath2(){
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         String url = "https://www.tutorialspoint.com/index.htm";
         driver.get(url);
         driver.manage().window().maximize();
@@ -38,8 +43,6 @@ public class FindingNthElement {
     }
     @Test
     public void nthElementCSSSelector1(){
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         String url = "https://www.tutorialspoint.com/index.htm";
         driver.get(url);
         driver.manage().window().maximize();
@@ -57,7 +60,7 @@ public class FindingNthElement {
         */
         driver.findElement(By.xpath("//input[@type='text'][1]"))
                 .click();
-        //driver.close();
+        driver.close();
     }
 
 }

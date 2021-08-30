@@ -7,17 +7,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
 public class IFrameHandling {
+    static WebDriver driver;
+    @BeforeClass
+    private void before(){
+        WebDriverManager.chromedriver().setup();
+        driver=new ChromeDriver();
+    }
     @Test
     public void handlingIframes(){
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
-
         driver.get("https://jqueryui.com/droppable/");
         // By Index
         // By Name of ID
@@ -36,8 +40,6 @@ public class IFrameHandling {
     }
     @Test
     public void handlingIFrames2(){
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver=new ChromeDriver();
         driver.get("http://practice.cybertekschool.com/iframe");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
@@ -48,7 +50,6 @@ public class IFrameHandling {
         WebElement box=driver.findElement(By.xpath("//body[@id='tinymce']"));
         box.clear();
         box.sendKeys("Bu sefer tamam....");
-
         driver.switchTo().defaultContent();
     }
 }

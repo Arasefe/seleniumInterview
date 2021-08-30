@@ -7,13 +7,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class ExceptionTest {
+    static WebDriver driver;
+
+    @BeforeClass
+    private void before(){
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+    }
+
+
+
     @Test(expectedExceptions = NoSuchElementException.class)
     public void exceptionTest(){
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://the-internet.herokuapp.com/drag_and_drop");
         Actions actions=new Actions(driver);

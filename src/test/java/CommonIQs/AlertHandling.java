@@ -4,7 +4,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -20,7 +19,7 @@ public class AlertHandling {
     }
 
     @Test
-    public void handlingAlert1() {
+    public void infoAlert() {
         driver.get("http://practice.cybertekschool.com/javascript_alerts");
         driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -35,7 +34,7 @@ public class AlertHandling {
         driver.close();
     }
     @Test
-    public void handlingAlert3() {
+    public void confirmationAlert() {
         // For Confirmation alert
         driver.get("http://practice.cybertekschool.com/javascript_alerts");
         driver.manage().window().maximize();
@@ -49,7 +48,7 @@ public class AlertHandling {
         driver.close();
     }
     @Test
-    public void handlingAlert4(){
+    public void promptAlert(){
         // For Prompt alert
         driver.get("http://practice.cybertekschool.com/javascript_alerts");
         driver.manage().window().maximize();
@@ -65,7 +64,7 @@ public class AlertHandling {
 
 
     @Test
-    public void handlingAlert2() {
+    public void infoAlert2() {
         driver.get("http://practice.cybertekschool.com/javascript_alerts");
         driver.manage().window().fullscreen();
         // For Information alert

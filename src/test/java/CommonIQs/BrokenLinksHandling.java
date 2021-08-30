@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -15,6 +16,7 @@ import java.util.List;
 
 public class BrokenLinksHandling {
     static WebDriver driver;
+    @BeforeClass
     private void before(){
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();

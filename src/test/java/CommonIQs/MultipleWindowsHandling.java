@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -12,10 +13,15 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class MultipleWindowsHandling {
+    static WebDriver driver;
+    @BeforeClass
+    private void before(){
+        WebDriverManager.chromedriver().setup();
+        driver=new ChromeDriver();
+    }
+
     @Test
     public void handlingMultipleWindows() throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://www.qaclickacademy.com/practice.php");
         WebElement footerDriver = driver.findElement(By.id("gf-BIG"));
@@ -36,13 +42,11 @@ public class MultipleWindowsHandling {
             driver.switchTo().window(it.next());
             System.out.println(driver.getTitle());
         }
-        //driver.close();
+        driver.close();
     }
 
     @Test
     public void handlingMultipleWindows2() throws IOException {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         //driver.get("https://rahulshettyacademy.com/angularpractice/");
         //Switching Window
         //driver.switchTo().newWindow(WindowType.WINDOW);
@@ -69,8 +73,6 @@ public class MultipleWindowsHandling {
 
     @Test
     public void openMultipleWindow() throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://www.qaclickacademy.com/practice.php");
         WebElement footerDriver = driver.findElement(By.id("gf-BIG"));            // Limiting webDriver scope

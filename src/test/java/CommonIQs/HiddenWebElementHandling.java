@@ -7,16 +7,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class HiddenWebElementHandling {
+    static WebDriver driver;
+    @BeforeClass
+    private void before(){
+        WebDriverManager.chromedriver().setup();
+        driver=new ChromeDriver();
+    }
     @Test
     public void handlingHiddenWebElements1() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         // We need to downcast WebDriver reference variable to use JavascriptExecutor methods
         driver.get("https://learn.letskodeit.com/p/practice");
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -34,8 +39,6 @@ public class HiddenWebElementHandling {
 
     @Test
     public void handlingHiddenWebElements2() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://www.qaclickacademy.com/practice.php");
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

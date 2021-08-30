@@ -11,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class AATest {
+public class _Test {
     static WebDriver driver;
     @BeforeClass
     public static void before(){
