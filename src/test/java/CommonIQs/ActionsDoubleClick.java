@@ -24,8 +24,8 @@ public class ActionsDoubleClick {
         driver.get("https://the-internet.herokuapp.com");
         Actions actions=new Actions(driver);
         WebElement target=driver.findElement(By.xpath("//div[@id='column-a']"));
-
-        //actions.doubleClick(target).build().perform();
+        actions.doubleClick(target).build().perform();
+        driver.close();
 
     }
 
@@ -37,6 +37,7 @@ public class ActionsDoubleClick {
         Actions actions=new Actions(driver);
         WebElement target=driver.findElement(By.xpath("//div[@id='column-b']"));
         actions.doubleClick(target).perform();
+        driver.close();
 
     }
 

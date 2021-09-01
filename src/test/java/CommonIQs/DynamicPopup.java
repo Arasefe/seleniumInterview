@@ -4,21 +4,28 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utilities.BrowserUtils;
 
 import java.util.concurrent.TimeUnit;
 
 public class DynamicPopup {
+    static WebDriver driver;
+    @BeforeClass
+    private void before(){
+        WebDriverManager.chromedriver().setup();
+        driver=new ChromeDriver();
+    }
 
 
     @Test
     public void popUp1() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://practice.cybertekschool.com/javascript_alerts");
+
         //Locating the warning/information alert button to click it
         WebElement warningAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
 
@@ -43,8 +50,6 @@ public class DynamicPopup {
 
     @Test
     public void popUp2() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://practice.cybertekschool.com/javascript_alerts");
@@ -73,8 +78,6 @@ public class DynamicPopup {
 
     @Test
     public void popUp3() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://practice.cybertekschool.com/javascript_alerts");
@@ -106,8 +109,6 @@ public class DynamicPopup {
 
     @Test
     public void dynamic_pop_up(){
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver=new ChromeDriver();
         //Locating the warning/information alert button to click it
         try {
             WebElement warningAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Confirm']"));
@@ -129,6 +130,10 @@ public class DynamicPopup {
         jsPrompt.sendKeys("Tulpar"+ Keys.ENTER);
 
 
+    }
+    @AfterClass
+    public void tearDown(){
+        driver.quit();
     }
 
 }

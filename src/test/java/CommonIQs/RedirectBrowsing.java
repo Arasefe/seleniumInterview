@@ -1,6 +1,7 @@
 package CommonIQs;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.CapabilityType;
@@ -14,17 +15,15 @@ public class RedirectBrowsing {
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
+
     }
 
     @Test
     public void redirectBrowsing(){
-
+        driver.manage().window().maximize();
         String PROXY="52.91.233.86:8080";
-        org.openqa.selenium.Proxy proxy=new org.openqa.selenium.Proxy();
-        proxy.setHttpProxy(PROXY)
-                .setFtpProxy(PROXY)
-                .setSslProxy(PROXY);
+        Proxy proxy=new Proxy();
+        proxy.setHttpProxy(PROXY);
         DesiredCapabilities cap=new DesiredCapabilities();
         cap.setCapability(CapabilityType.PROXY, proxy);
          driver=new ChromeDriver(cap);

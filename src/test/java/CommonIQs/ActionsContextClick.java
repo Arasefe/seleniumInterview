@@ -46,23 +46,16 @@ public class ActionsContextClick {
 
     @Test
     public void contextClick2() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.amazon.com");
-
         Actions actions = new Actions(driver);
         WebElement signIn = driver.findElement(By.cssSelector("a[id='nav-link-accountList']"));
-
         actions.contextClick(signIn).build().perform();
-
         driver.close();
     }
 
     @Test
     public void contextClick3() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
         // Navigate to Url
         driver.get("https://google.com");
         // Store 'google search' button web element
@@ -70,6 +63,7 @@ public class ActionsContextClick {
         Actions action = new Actions(driver);
         // Perform context-click action on the element
         action.contextClick(searchBtn).build().perform();
+        driver.quit();
 
     }
 }

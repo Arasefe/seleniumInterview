@@ -37,6 +37,7 @@ public class BasicAuthentication {
         driver.get("https://selenium:webdriver@chercher.tech/auth");
         // verify the title
         Assert.assertEquals(driver.getTitle(),"Authentication Successful");
+        driver.close();
     }
 
 

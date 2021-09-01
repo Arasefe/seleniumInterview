@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class HiddenWebElementHandling {
+public class HiddenWebElement {
     static WebDriver driver;
     @BeforeClass
     private void before(){

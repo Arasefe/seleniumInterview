@@ -47,7 +47,6 @@ public class ActionsDragAndDrop {
     @Test
     public void dragAndDropAdvanced(){
         driver.manage().window().maximize();
-
         driver.get("https://www.amazon.com");
         Actions actions = new Actions(driver);
         WebElement bestSellers = driver.findElement(By.xpath("//a[.='Best Sellers']"));
@@ -56,8 +55,8 @@ public class ActionsDragAndDrop {
         wait.until(ExpectedConditions.visibilityOf(bestSellers));
         WebElement el = driver.findElement(By.xpath("//a[.='Conditions of Use']"));
         wait.until(ExpectedConditions.visibilityOf(el));
-
         actions.moveToElement(el).doubleClick().build().perform();
+        driver.close();
     }
 
 
