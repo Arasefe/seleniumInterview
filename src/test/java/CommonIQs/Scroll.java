@@ -3,7 +3,6 @@ package CommonIQs;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-import jdk.nashorn.internal.scripts.JS;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +12,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utilities.BrowserUtils;
 
-import java.sql.Driver;
 
 public class Scroll {
     static WebDriver driver;

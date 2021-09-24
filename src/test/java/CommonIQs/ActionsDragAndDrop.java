@@ -45,7 +45,7 @@ public class ActionsDragAndDrop {
 
     }
     @Test
-    public void dragAndDropAdvanced(){
+    public void dragAndDrop3(){
         driver.manage().window().maximize();
         driver.get("https://www.amazon.com");
         Actions actions = new Actions(driver);
@@ -56,6 +56,17 @@ public class ActionsDragAndDrop {
         WebElement el = driver.findElement(By.xpath("//a[.='Conditions of Use']"));
         wait.until(ExpectedConditions.visibilityOf(el));
         actions.moveToElement(el).doubleClick().build().perform();
+        driver.close();
+    }
+
+    @Test
+    public void dragAndDrop4(){
+        driver.manage().window().maximize();
+        driver.get("https://formy-project.herokuapp.com/dragdrop");
+        Actions actions = new Actions(driver);
+        WebElement image=driver.findElement(By.id("image"));
+        WebElement box=driver.findElement(By.id("box"));
+        actions.dragAndDrop(image,box).build().perform();
         driver.close();
     }
 

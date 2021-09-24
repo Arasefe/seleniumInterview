@@ -17,7 +17,7 @@ public class RadioButtons {
         driver=new ChromeDriver();
     }
     @Test
-    public void radioButtons(){
+    public void radioButtons1(){
         driver.get("https://www.seleniumeasy.com/test/basic-radiobutton-demo.html");
 
         WebElement male=driver.findElement(By.xpath("//div[@class='col-md-6 text-left']/div/div[2]/label[1]/input"));
@@ -37,7 +37,7 @@ public class RadioButtons {
     }
 
     @Test
-    public void groupRadioButtons(){
+    public void radioButtons2(){
         /*
         isSelected(): Checks whether a radio button is selected or not.
         isDisplayed(): Checks whether a radio button is displayed on the web page or not.
@@ -68,5 +68,24 @@ public class RadioButtons {
 
     }
 
+    @Test
+    public void radioButtons3(){
+        /*
+        isSelected(): Checks whether a radio button is selected or not.
+        isDisplayed(): Checks whether a radio button is displayed on the web page or not.
+        isEnabled(): Checks whether a radio button is enabled or not
+         */
+        driver.get("https://formy-project.herokuapp.com/radiobutton");
+
+        WebElement radioBtn1=driver.findElement(By.id("radio-button-1"));
+        radioBtn1.click();
+        WebElement radioBtn2=driver.findElement(By.cssSelector("input[value='option2']"));
+        radioBtn2.click();
+        WebElement radioBtn3=driver.findElement(By.cssSelector("input[value='option3']"));
+        radioBtn3.click();
+        driver.close();
+
+
+    }
 
 }
