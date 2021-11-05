@@ -25,10 +25,10 @@ public class ActionsContextClick {
     public void contextClick1() {
         /*
         1. Go to https://the-internet.herokuapp.com/context_menu
-        2. Right click to the box.
-        3. Alert will open.
+        2. Right click to the box
+        3. Alert will open
         4. Accept alert
-        No assertion needed for this practice.
+        5. Create assertion to verify the message
          */
         driver.get("https://the-internet.herokuapp.com/context_menu");
         //WebElement box = driver.findElement(By.cssSelector("div[id='hot-spot']"));

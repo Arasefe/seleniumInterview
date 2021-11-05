@@ -11,19 +11,23 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class _Test {
+public class Medicom {
+
     static WebDriver driver;
     @BeforeClass
     public static void before(){
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
+        driver.get("https://home.medicom.us/");
         driver.manage().window().maximize();
     }
+
 
     @Test
-    private void method(){
-        driver.manage().window().maximize();
-        driver.get("https://www.amazon.com");
+    public void contextClick1() {
+        WebElement facilityLogin=driver.findElement(By.xpath("//a[.='Facility Login']"));
+        facilityLogin.click();
 
     }
+
 }
